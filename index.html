@@ -3,18 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>Opening booking…</title>
-
-  <!-- Force external browser behavior -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbXXXX/exec">
+</head>
+<body style="font-family: system-ui; text-align: center; padding: 40px">
+
+  <h2>Opening booking system…</h2>
+  <p>If it doesn’t open automatically, tap the button below.</p>
+
+  <button onclick="openApp()" style="
+    font-size:18px;
+    padding:14px 20px;
+    border-radius:10px;
+    border:none;
+    background:#2563eb;
+    color:white;
+  ">
+    Open Booking
+  </button>
 
   <script>
-    // backup redirect
-    window.location.replace("https://script.google.com/macros/s/AKfycbygiQJYl0Ov-698kNwjXewXcL1mwvzy4RZ8h7Sy3hgNYJj38Cl5Iqiqb-G4BDBsIKeF/exec");
+    const targetUrl = "https://script.google.com/macros/s/AKfycbygiQJYl0Ov-698kNwjXewXcL1mwvzy4RZ8h7Sy3hgNYJj38Cl5Iqiqb-G4BDBsIKeF/exec";
+
+    function openApp() {
+      // Android: force Chrome
+      window.location.href =
+        "intent://" + targetUrl.replace("https://", "") +
+        "#Intent;scheme=https;package=com.android.chrome;end";
+      
+      // iOS + fallback
+      setTimeout(() => {
+        window.location.href = targetUrl;
+      }, 800);
+    }
+
+    // auto-attempt
+    openApp();
   </script>
-</head>
-<body>
-  <p>Opening booking system…</p>
-  <p>If nothing happens, <a href="https://script.google.com/macros/s/AKfycbygiQJYl0Ov-698kNwjXewXcL1mwvzy4RZ8h7Sy3hgNYJj38Cl5Iqiqb-G4BDBsIKeF/exec">tap here</a>.</p>
+
 </body>
 </html>
