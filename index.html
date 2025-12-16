@@ -1,44 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Opening booking…</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Бронирование мест</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; url=[https://script.google.com/macros/s/AKfycbygiQJYl0Ov-698kNwjXewXcL1mwvzy4RZ8h7Sy3hgNYJj38Cl5Iqiqb-G4BDBsIKeF/exec]">
 </head>
-<body style="font-family: system-ui; text-align: center; padding: 40px">
-
-  <h2>Opening booking system…</h2>
-  <p>If it doesn’t open automatically, tap the button below.</p>
-
-  <button onclick="openApp()" style="
-    font-size:18px;
-    padding:14px 20px;
-    border-radius:10px;
-    border:none;
-    background:#2563eb;
-    color:white;
-  ">
-    Open Booking
-  </button>
-
-  <script>
-    const targetUrl = "https://script.google.com/macros/s/AKfycbygiQJYl0Ov-698kNwjXewXcL1mwvzy4RZ8h7Sy3hgNYJj38Cl5Iqiqb-G4BDBsIKeF/exec";
-
-    function openApp() {
-      // Android: force Chrome
-      window.location.href =
-        "intent://" + targetUrl.replace("https://", "") +
-        "#Intent;scheme=https;package=com.android.chrome;end";
-      
-      // iOS + fallback
-      setTimeout(() => {
-        window.location.href = targetUrl;
-      }, 800);
-    }
-
-    // auto-attempt
-    openApp();
-  </script>
-
+<body>
+    <p>Идет переадресация на страницу бронирования...</p>
+    <p>Если переадресация не сработала (особенно в Telegram), пожалуйста, нажмите <a href="[https://script.google.com/macros/s/AKfycbygiQJYl0Ov-698kNwjXewXcL1mwvzy4RZ8h7Sy3hgNYJj38Cl5Iqiqb-G4BDBsIKeF/exec]">Открыть в браузере</a>.</p>
+    
+    <script>
+        // Необязательный JS-Редирект: Для некоторых старых браузеров
+        window.location.href = "[https://script.google.com/macros/s/AKfycbygiQJYl0Ov-698kNwjXewXcL1mwvzy4RZ8h7Sy3hgNYJj38Cl5Iqiqb-G4BDBsIKeF/exec]";
+    </script>
 </body>
 </html>
